@@ -49,6 +49,8 @@ export class LoginComponent implements OnInit {
               //window.location.href='/user-dashboard'
               this.router.navigate(['user-dashboard'])
               this.login.loginStatusSubject.next(true);
+
+              
             }else{
               this.login.logout();
             }
