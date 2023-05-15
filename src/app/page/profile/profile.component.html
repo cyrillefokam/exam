@@ -1,0 +1,47 @@
+
+<mat-card *ngIf="user">
+  <h1>YOUR PROFILE DETAILS</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="container text-center">
+                <img src="https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg" 
+                alt=""
+                class="profile-image">
+                <h1 class="mt20 ">{{user.firstname}} {{user.lastname}}</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class="table1 text-center">
+                        <tr>
+                            <td>Username</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>Userid</td>
+                            <td>Exam{{user.id}}</td>
+                        </tr>
+                        <tr *ngIf="user.Phone">
+                            <td>Phone</td>
+                            <td>{{user.Phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>{{user.authorities[0].authority}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{user.enabled?"active":"NAOTACTIVE"}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="align-center">
+    <button mat-flat-button color="primary">UPDATE</button>
+    <button style="margin-left:20px;" mat-flat-button color="accent">SHARE</button>
+  </mat-card-actions>
+</mat-card>
